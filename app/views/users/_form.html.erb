@@ -22,8 +22,8 @@
   <div  class="field">
   peliculas
   <br>
-<%=f.collection_select :movie_id, Movie.all, :id, :titulo %>
-<br>
+
+
 
 <div  class="field">
 series
@@ -32,7 +32,21 @@ series
 
 
 </div>
+<div  class="field">
+multiples series
+<br>
+<%= f.collection_select :serie_ids,Serie.all,
+                        :id, :titulo, { include_blank: true },
+                         { multiple: true } %>
+</div>
 
+<div  class="field">
+multiples peliculas
+<br>
+<%= f.collection_select :movie_ids2,Movie.all,
+                        :id, :titulo, { include_blank: false},
+                         { multiple: true } %>
+</div>
 
 <br>
   <div class="actions">

@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     @users = User.all
     @series = Serie.all
     @movies = Movie.all
+
   end
 
   # GET /users/1
@@ -81,6 +82,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:nombre, :email, :serie_id, :movie_id)
+      params.require(:user).permit(:nombre, :email, :serie_id, :movie_id,:serie_ids,{:movie_ids2 => []})
     end
 end
