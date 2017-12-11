@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @user.nombre %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+<% if @user.serie_id!= nil %>
+<p>
+
+
+  <strong>Serie:</strong>
+  <%=@series.find(@user.serie_id).titulo%>
+  </p>
+  <%end%>
+<% if @user.movie_id!= nil %>
+<p>
+
+  <strong>Pelicula:</strong>
+  <%=@movies.find(@user.movie_id).titulo%>
+  <%end %>
+</p>
+
+
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
